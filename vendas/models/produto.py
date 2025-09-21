@@ -9,7 +9,7 @@ class Produto(BaseModel):
     nome_produto = models.CharField(verbose_name='Nome do produto', max_length=100)
     descricao_produto = models.TextField(verbose_name='Descrição do Produto', max_length=500, blank=True)
     valor_produto = models.DecimalField(verbose_name='Valor do Produto', max_digits=10, decimal_places=2, validators=[MinValueValidator(0.01)])
-    itens = models.ManyToManyField(Item, verbose_name='Itens do Produto', blank=True, null=True)
+    itens = models.ManyToManyField(Item, verbose_name='Itens do Produto', blank=True)
     categorias = models.ManyToManyField(Categoria, verbose_name='Categorias do Produto')
 
     class Meta:
