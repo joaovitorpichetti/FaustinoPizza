@@ -18,5 +18,5 @@ class Produto(BaseModel):
         verbose_name_plural = 'Produtos'
 
     def __str__(self):
-        return self.nome_produto + ' - ' + self.categorias.__str__
+        return f'{self.nome_produto} - {self.categorias.__str__}'
 
