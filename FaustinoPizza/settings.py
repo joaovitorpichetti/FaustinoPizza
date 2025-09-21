@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_cleanup' #Gerencia os aquivos quando excluidos.
     'usuarios',
     'vendas',
+
+    # Adicione django-cleanup por último
+    'django_cleanup.apps.CleanupConfig', #Gerencia os aquivos quando excluidos.
 ]
 
 MIDDLEWARE = [
