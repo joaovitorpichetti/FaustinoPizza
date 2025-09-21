@@ -1,7 +1,7 @@
 from django.core.validators import MinValueValidator
-from vendas.models.base import BaseModel
-from vendas.models.item import Item
-from vendas.models import Categoria
+from .base import BaseModel
+from .item import Item
+from .categoria import Categoria
 from django.db import models
 
 class Produto(BaseModel):

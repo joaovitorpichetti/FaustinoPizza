@@ -1,6 +1,6 @@
 from django.core.validators import MinValueValidator
 
-from vendas.models.base import BaseModel
+from .base import BaseModel
 from django.db import models
 
 class Item(BaseModel):

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
-from usuarios.models.endereco import Endereco
-from usuarios.models.base import BaseModel
+from .endereco import Endereco
+from .base import BaseModel
 from django.db import models
 
 class Colaborador(BaseModel):
