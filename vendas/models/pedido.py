@@ -34,4 +34,4 @@ class Pedido(BaseModel):
         verbose_name_plural = 'Pedidos'
 
     def __str__(self):
-        return f'{self.cliente.__str__} - {self.status_pedido} - {self.data_hora}'
+        return f'{self.cliente.__str__()} - {self.status_pedido} - {self.data_hora}'

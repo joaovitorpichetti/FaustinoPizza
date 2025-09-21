@@ -17,6 +17,22 @@ class Produto(BaseModel):
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
 
-    def __str__(self):
-        return f'{self.nome_produto} - {self.categorias.__str__()}'
 
+    def __str__(self):
+        # 1. Acessamos a LISTA de objetos Categoria com .all()
+        categorias_do_produto = self.categorias.all()
+
+        # 2. Verificamos se a lista não está vazia de forma eficiente com .exists()
+        if categorias_do_produto.exists():
+            # 3. Criamos uma lista SÓ COM OS NOMES de cada categoria
+            #    Exemplo de resultado: ['Pizzas', 'Promoção de Terça']
+            lista_de_nomes = [categoria.__str__() for categoria in categorias_do_produto]
+
+            # 4. Juntamos os nomes da lista em um único texto, separados por ", "
+            #    Exemplo de resultado: "Pizzas, Promoção de Terça"
+            nomes_formatados = ", ".join(lista_de_nomes)
+
+            return f'{self.nome_produto} - [{nomes_formatados}]'
+        else:
+            # 5. Se a lista de categorias estiver vazia, mostramos a mensagem padrão
+            return f'{self.nome_produto} - (Sem Categoria)'
