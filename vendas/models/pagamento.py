@@ -25,7 +25,7 @@ class Pagamento(BaseModel):
         CARTAO_DEBITO = 'CD', 'Cartão de Débito'
         #OUTRO = 'OUT', 'Outro'
 
-    status_pagamento = models.CharField(choices=StatusChoices.choices, max_length=3, verbose_name='Status de pagamento')
+    status_pagamento = models.CharField(choices=StatusChoices.choices, max_length=3, verbose_name='Status de pagamento', default=StatusChoices.PENDENTE)
     forma_pagamento = models.CharField(choices=FormaPagamentoChoices.choices, max_length=3, verbose_name='Forma de pagamento')
 
 
@@ -33,3 +33,6 @@ class Pagamento(BaseModel):
         abstract = False
         verbose_name = "Pagamento"
         verbose_name_plural = "Pagamentos"
+
+    def __str__(self):
+        return f'{self.status_pagamento} - {self.forma_pagamento}'
