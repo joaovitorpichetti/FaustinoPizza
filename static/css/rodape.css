@@ -1,0 +1,21 @@
+.rodape {
+    background-color: #ffa500b3;
+    color: white;
+}
+
+.desenvolvedor{
+    text-decoration: none;
+    color: #393939;
+}
+
+.desenvolvedor>a{
+    text-decoration: none;
+    color: #393939;
+    font-weight: bold;
+}
+
+.redesScocias{
+    text-align: center;
+    font-size: 30px;
+    color: #393939;
+}
