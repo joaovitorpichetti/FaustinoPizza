@@ -1,6 +1,5 @@
 from .base import BaseModel
 from django.db import models
-from .pagamento import Pagamento
 from .produto import Produto
 from usuarios.models.cliente import Cliente
 
@@ -19,13 +18,36 @@ class Pedido(BaseModel):
         DELIVERY = 'DEL', 'Delivery'  # Para entregar no endereço do cliente
         RETIRADA = 'RET', 'Retirada no Local'  # Cliente busca na pizzaria
 
+    # status_pagamento
+    class StatusPagamentoChoices(models.TextChoices):
+        PENDENTE = 'PEN', 'Pendente'
+        APROVADO = 'APR', 'Aprovado'
+        RECUSADO = 'REC', 'Recusado'
+        CANCELADO = 'CAN', 'Cancelado'
+        EM_PROCESSAMENTO = 'PRO', 'Em Processamento'
+        REEMBOLSADO = 'REE', 'Reembolsado'
+
+    # forma_pagamento
+    class FormaPagamentoChoices(models.TextChoices):
+        """
+        Define as opções para a forma de pagamento.
+        O primeiro valor é o que será armazenado no banco de dados.
+        O segundo valor é o que será exibido para o usuário.
+        """
+        DINHEIRO = 'DIN', 'Dinheiro'
+        PIX = 'PIX', 'Pix'
+        CARTAO_CREDITO = 'CC', 'Cartão de Crédito'
+        CARTAO_DEBITO = 'CD', 'Cartão de Débito'
+        # OUTRO = 'OUT', 'Outro'
+
 
     produtos = models.ManyToManyField(Produto, verbose_name='Informe os produtos do pedido')
     cliente = models.ForeignKey(Cliente, verbose_name='Cliente', on_delete=models.CASCADE)
     status_pedido = models.CharField(choices=StatusChoices.choices, max_length=3, verbose_name='Status do pedido', default=StatusChoices.AGUARDANDO_CONFIRMACAO)
     entrega = models.CharField(choices=EntregaChoices.choices, max_length=3, verbose_name='Entrega')
     valor = models.FloatField(verbose_name='Valor', blank=True, null=True)
-    forma_pagamento = models.OneToOneField(Pagamento, verbose_name='Forma de pagamento', on_delete=models.PROTECT)
+    status_pagamento = models.CharField(choices=StatusPagamentoChoices.choices, max_length=3, verbose_name='Status do pagamento', default=StatusPagamentoChoices.PENDENTE)
+    forma_pagamento = models.CharField(choices=FormaPagamentoChoices.choices, max_length=3, verbose_name='Forma de pagamento')
     data_hora = models.DateTimeField(verbose_name='Data/hora', auto_now_add=True)
 
     class Meta:
