@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+
+    <form method="POST">
+    {% csrf_token %}
+        <p> Você vai realmente deletar a categoria {{ object.nome_categoria }}</p>
+    <button type="submit" class="btn btn-success">
+        <i class="bi bi-floppy"></i> Excluir Categoria
+    </button>
+    </form>
+
+{% endblock %}
