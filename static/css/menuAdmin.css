@@ -1,0 +1,56 @@
+body {
+  background-color: #f8f9fa;
+}
+
+/* Sidebar fixa em telas médias e maiores */
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 1045;
+  }
+
+  .main-content {
+    margin-left: 300px;
+  }
+}
+
+/* Estilo dos links principais */
+.sidebar .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #eef;
+}
+
+.sidebar .nav-link[aria-expanded="true"] {
+  background-color: #e6e6ff;
+  border-radius: .5rem;
+  color: #000;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link[aria-expanded="true"] .arrow-icon {
+  transform: rotate(90deg);
+}
+
+.submenu {
+  padding-left: 1.5rem;
+}
+
+.submenu .nav-link {
+  color: #6c757d;
+  font-size: 0.95rem;
+  padding: .4rem 1rem;
+}

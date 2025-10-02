@@ -1,0 +1,12 @@
+{% extends 'baseAdmin.html' %}
+{% load static %}
+
+{% block conteudoAdmin %}
+    <h1>Início</h1>
+      <p>Olá, {{ nome }}!<br>Bem-vindo ao Painel de Administração.</p>
+
+    <div class="alert alert-warning" role="alert">
+      Lembrete: Deixar essa Página só para membros da Equipe, mudar as permisções na Views.
+    </div>
+
+{% endblock %}

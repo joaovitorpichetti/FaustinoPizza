@@ -1,14 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'baseAdmin.html' %}
 {% load static %}
 
-{% block conteudo %}
-
+{% block conteudoAdmin %}
+    <h2>Exclusão de Categoria</h2>
+    <hr> <br>
     <form method="POST">
     {% csrf_token %}
-        <p> Você vai realmente deletar a categoria {{ object.nome_categoria }}</p>
-    <button type="submit" class="btn btn-success">
-        <i class="bi bi-floppy"></i> Excluir Categoria
-    </button>
+        <p> Você vai realmente deletar a categoria: <b>{{ object.nome_categoria }}</b></p>
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash" style="font-size: 1.10em;"></i> Excluir Categoria
+        </button>
+        <a class="btn btn-success" href="{% url 'vendas:categoria_lista' %}" role="button">
+            <span class="text-light text-center">
+                <i class="bi bi-x-circle"></i> Cancelar
+            </span>
+        </a>
     </form>
 
 {% endblock %}

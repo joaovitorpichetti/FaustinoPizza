@@ -1,8 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'baseAdmin.html' %}
 {% load static %}
 {% load widget_tweaks %}
 
-{% block conteudo %}
+{% block conteudoAdmin %}
+    <h2>Editar Categoria</h2>
+    <hr> <br>
 
     <form enctype="multipart/form-data" action="" method="post">
     {% csrf_token %}

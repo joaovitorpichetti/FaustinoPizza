@@ -1,0 +1,134 @@
+{% load static %}
+<!-- Navbar para mobile -->
+<nav class="navbar navbar-light bg-light d-md-none px-3">
+<button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile" aria-controls="sidebarMobile">
+  <i class="bi bi-list"></i> Menu
+</button>
+</nav>
+
+<!-- Sidebar mobile (offcanvas) -->
+<div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="sidebarMobile">
+<div class="offcanvas-header">
+  <h5 class="offcanvas-title">Menu</h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+</div>
+<div class="offcanvas-body p-0">
+  <!-- Conteúdo do menu -->
+  <div class="p-3">
+    <h3><i class="bi bi-bootstrap-fill text-primary"></i> Collapsible</h3>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#mobile-home" data-bs-toggle="collapse" class="nav-link d-flex justify-content-between align-items-center" aria-expanded="true">
+          <span><i class="bi bi-house-door me-2"></i> Home</span>
+          <i class="bi bi-chevron-right arrow-icon"></i>
+        </a>
+        <div class="collapse show" id="mobile-home">
+          <ul class="nav flex-column submenu">
+            <li><a href="#" class="nav-link">Overview</a></li>
+            <li><a href="#" class="nav-link">Updates</a></li>
+            <li><a href="#" class="nav-link">Reports</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#mobile-dashboard" data-bs-toggle="collapse" class="nav-link d-flex justify-content-between align-items-center" aria-expanded="false">
+          <span><i class="bi bi-speedometer2 me-2"></i> Dashboard</span>
+          <i class="bi bi-chevron-right arrow-icon"></i>
+        </a>
+        <div class="collapse" id="mobile-dashboard">
+          <ul class="nav flex-column submenu">
+            <li><a href="#" class="nav-link">Overview</a></li>
+            <li><a href="#" class="nav-link">Weekly</a></li>
+            <li><a href="#" class="nav-link">Monthly</a></li>
+            <li><a href="#" class="nav-link">Annually</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><i class="bi bi-table me-2"></i> Orders</a>
+      </li>
+      <li class="nav-item">
+        <a href="#mobile-account" data-bs-toggle="collapse" class="nav-link d-flex justify-content-between align-items-center" aria-expanded="false">
+          <span><i class="bi bi-person me-2"></i> Account MOBI</span>
+          <i class="bi bi-chevron-right arrow-icon"></i>
+        </a>
+        <div class="collapse" id="mobile-account">
+          <ul class="nav flex-column submenu">
+            <li><a href="#" class="nav-link">Profile</a></li>
+            <li><a href="#" class="nav-link">Settings</a></li>
+            <li><a href="#" class="nav-link">Billing</a></li>
+            <li><a href="#" class="nav-link">Sign out</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- Sidebar desktop -->
+<div class="sidebar d-none d-md-block">
+<h3><i class="text-primary"><img src="{% static 'img/LogoOk.png' %}" height="50px" alt="Logo"></i> Menu Admin</h3>
+<hr>
+<ul class="nav nav-pills flex-column mb-auto">
+  <li class="nav-item">
+    <a href="#desktop-home" data-bs-toggle="collapse" class="nav-link d-flex justify-content-between align-items-center" aria-expanded="true">
+      <span><i class="bi bi-house-door me-2"></i> Home</span>
+      <i class="bi bi-chevron-right arrow-icon"></i>
+    </a>
+    <div class="collapse show" id="desktop-home">
+      <ul class="nav flex-column submenu">
+        <li><a href="{% url 'inicioAdmin' %}" class="nav-link">Início</a></li>
+        <li><a href="#" class="nav-link">Updates</a></li>
+        <li><a href="#" class="nav-link">Reports</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a href="#desktop-dashboard" data-bs-toggle="collapse" class="nav-link d-flex justify-content-between align-items-center" aria-expanded="false">
+      <span><i class="bi bi-speedometer2 me-2"></i> Dashboard</span>
+      <i class="bi bi-chevron-right arrow-icon"></i>
+    </a>
+    <div class="collapse" id="desktop-dashboard">
+      <ul class="nav flex-column submenu">
+        <li><a href="#" class="nav-link">Overview</a></li>
+        <li><a href="#" class="nav-link">Weekly</a></li>
+        <li><a href="#" class="nav-link">Monthly</a></li>
+        <li><a href="#" class="nav-link">Annually</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="nav-item">
+      <a href="#desktop-vendas" data-bs-toggle="collapse" class="nav-link d-flex justify-content-between align-items-center" aria-expanded="false">
+      <span><i class="bi bi-table me-2"></i> Vendas</span>
+      <i class="bi bi-chevron-right arrow-icon"></i>
+    </a>
+    <div class="collapse" id="desktop-vendas">
+      <ul class="nav flex-column submenu">
+        <li><a href="#" class="nav-link">Pedidos</a></li>
+        <li><a href="{% url 'vendas:categoria_lista' %}" class="nav-link">Categorias</a></li>
+        <li><a href="#" class="nav-link">Produtos</a></li>
+        <li><a href="#" class="nav-link">Item</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a href="#desktop-account" data-bs-toggle="collapse" class="nav-link d-flex justify-content-between align-items-center" aria-expanded="false">
+      <span><i class="bi bi-person me-2"></i> Account</span>
+      <i class="bi bi-chevron-right arrow-icon"></i>
+    </a>
+    <div class="collapse" id="desktop-account">
+      <ul class="nav flex-column submenu">
+        <li><a href="#" class="nav-link">Profile</a></li>
+        <li><a href="#" class="nav-link">Settings</a></li>
+        <li><a href="#" class="nav-link">Billing</a></li>
+        <li><a href="#" class="nav-link">Sign out</a></li>
+      </ul>
+    </div>
+  </li>
+    <!-- Exemplo para um item só <li class="nav-item">
+    <a href="#" class="nav-link"><i class="bi bi-table me-2"></i> Orders</a>
+    </li>-->
+</ul>
+</div>
