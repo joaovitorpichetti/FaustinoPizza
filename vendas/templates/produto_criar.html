@@ -3,12 +3,13 @@
 {% load widget_tweaks %}
 
 {% block conteudoAdmin %}
-    <h1>Criar Categorias</h1>
+
+    <h1>Criar Produto</h1>
     <hr><br>
 
     <form enctype="multipart/form-data" action="" method="post">
     {% csrf_token %}
-        {% render_field form.nome_categoria|add_class:"form-control"  placeholder="Nome da Categoria" %}
+        {{ form }}
 
         <br>
         <div style="text-align: right" class="p-2">

@@ -8,7 +8,7 @@
 
     <form enctype="multipart/form-data" action="" method="post">
     {% csrf_token %}
-        {{ form }}
+        {% render_field form.nome_categoria|add_class:"form-control"  placeholder="Nome da Categoria" %}
 
         <div style="text-align: right" class="p-2">
                 <button type="submit" class="btn btn-success">

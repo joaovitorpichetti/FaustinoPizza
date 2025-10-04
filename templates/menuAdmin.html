@@ -69,7 +69,7 @@
 
 <!-- Sidebar desktop -->
 <div class="sidebar d-none d-md-block">
-<h3><i class="text-primary"><img src="{% static 'img/LogoOk.png' %}" height="50px" alt="Logo"></i> Menu Admin</h3>
+<h3><i class="text-primary"><img src="{% static 'img/LogoADMok.png' %}" width="250px" alt="Logo"></i></h3>
 <hr>
 <ul class="nav nav-pills flex-column mb-auto">
   <li class="nav-item">
@@ -108,7 +108,7 @@
       <ul class="nav flex-column submenu">
         <li><a href="#" class="nav-link">Pedidos</a></li>
         <li><a href="{% url 'vendas:categoria_lista' %}" class="nav-link">Categorias</a></li>
-        <li><a href="#" class="nav-link">Produtos</a></li>
+        <li><a href="{% url 'vendas:produto_lista' %}" class="nav-link">Produtos</a></li>
         <li><a href="#" class="nav-link">Item</a></li>
       </ul>
     </div>
@@ -120,10 +120,10 @@
     </a>
     <div class="collapse" id="desktop-account">
       <ul class="nav flex-column submenu">
-        <li><a href="#" class="nav-link">Profile</a></li>
-        <li><a href="#" class="nav-link">Settings</a></li>
-        <li><a href="#" class="nav-link">Billing</a></li>
-        <li><a href="#" class="nav-link">Sign out</a></li>
+        <li><a href="#" class="nav-link">Colaboradores</a></li>
+        <li><a href="#" class="nav-link">Clientes</a></li>
+        <li><a href="#" class="nav-link">......</a></li>
+        <li><a href="#" class="nav-link">......</a></li>
       </ul>
     </div>
   </li>

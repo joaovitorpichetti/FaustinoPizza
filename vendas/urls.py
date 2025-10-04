@@ -8,4 +8,6 @@ urlpatterns = [
     path('categorias/criar', views.CategoriaCreateView.as_view(), name='categoria_criar'),
     path('categorias/editar/<int:pk>', views.CategoriaUpdateView.as_view(), name='categoria_editar'),
     path('categorias/excluir/<int:pk>', views.CategoriaDeleteView.as_view(), name='categoria_excluir'),
+    path('produtos', views.ProdutoListView.as_view(), name='produto_lista'),
+    path('produtos/criar', views.ProdutoCreateView.as_view(), name='produto_criar'),
 ]
